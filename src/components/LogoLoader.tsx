@@ -20,7 +20,7 @@ const LogoLoader = () => {
           }}
         >
           <img 
-            src="/lovable-uploads/e89043ec-f4b1-45b5-9409-78c718df2214.png" 
+            src="/lovable-uploads/72b76a7a-0668-4558-8e4b-58623c4cf83d.png" 
             alt="Jai Hind College Logo" 
             className="w-32 h-32 md:w-40 md:h-40"
           />
