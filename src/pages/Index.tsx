@@ -13,7 +13,6 @@ import InteractiveSchedule from '@/components/InteractiveSchedule';
 import VisualSeparator from '@/components/VisualSeparator';
 import Footer from '@/components/Footer';
 import FloatingActionButton from '@/components/FloatingActionButton';
-import AnimatedStats from '@/components/AnimatedStats';
 import { PageTransition } from '@/components/LoadingStates';
 
 const Index = () => {
@@ -22,13 +21,6 @@ const Index = () => {
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 relative">
         <EnhancedNavbar />
         <HeroSection />
-        
-        {/* Add AnimatedStats after HeroSection */}
-        <section className="py-12 bg-gradient-to-br from-primary/10 to-accent/10">
-          <div className="container mx-auto px-4">
-            <AnimatedStats />
-          </div>
-        </section>
         
         {/* Enhanced visual separators with subtle animations */}
         <div className="relative overflow-hidden">
