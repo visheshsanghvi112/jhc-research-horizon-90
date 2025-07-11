@@ -1,12 +1,11 @@
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { scrollToTopInstant } from "@/utils/scrollToTop";
-import LogoLoader from "@/components/LogoLoader";
 import Index from "./pages/Index";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
@@ -21,23 +20,10 @@ const queryClient = new QueryClient();
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true);
     scrollToTopInstant();
-    
-    // Show loader for a brief moment during navigation
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 800);
-
-    return () => clearTimeout(timer);
   }, [pathname]);
-
-  if (isLoading) {
-    return <LogoLoader />;
-  }
 
   return null;
 }
