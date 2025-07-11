@@ -1,9 +1,9 @@
+
 import { Calendar, MapPin, Award, Users, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 import CountdownTimer from './CountdownTimer';
-import AnimatedStats from './AnimatedStats';
 
 const HeroSection = () => {
   const scrollToRegistration = () => {
@@ -366,9 +366,6 @@ const HeroSection = () => {
             </div>
           </motion.div>
         </motion.div>
-
-        {/* Add animated stats */}
-        <AnimatedStats />
       </div>
 
       {/* Enhanced scroll indicator */}

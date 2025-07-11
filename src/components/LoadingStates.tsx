@@ -1,5 +1,6 @@
 
 import { motion } from 'framer-motion';
+import LogoLoader from './LogoLoader';
 
 export const SkeletonCard = () => (
   <div className="bg-white rounded-lg shadow-lg p-6 animate-pulse">
@@ -30,3 +31,5 @@ export const PageTransition = ({ children }: { children: React.ReactNode }) => (
     {children}
   </motion.div>
 );
+
+export { default as LogoLoader } from './LogoLoader';
