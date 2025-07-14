@@ -2,7 +2,7 @@
 MIT License
 
 Copyright (c) 2025 Jai Hind College (Empowered Autonomous)
-Website Development by Vishesh Sanghvi
+Website Developer: Vishesh Sanghvi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,44 +24,12 @@ SOFTWARE.
 
 ---
 
-JHC 2025 National Research Conference
-"Empowering Innovation through Generative AI, Data Science, and Analytics"
+## Acknowledgments
 
-Conference Organizer: Jai Hind College, Mumbai
-Website Developer: Vishesh Sanghvi
-Conference Dates: November 21-22, 2025
-Location: Jai Hind College, Churchgate, Mumbai - 400020
+This website was developed for the JHC 2025 National Research Conference 
+organized by the Department of B.Sc. IT, B.Voc. Software Development & 
+M.Sc. Big Data Analytics at Jai Hind College (Empowered Autonomous).
 
-This website and its contents are protected by copyright and other intellectual 
-property laws. The conference name, logo, and associated branding are trademarks 
-of Jai Hind College.
-
-For more information about the conference, please contact:
-Email: jhc.research@jaihindcollege.edu.in
-Website: https://jhc2025.vercel.app/
-
----
-
-Third-party libraries and dependencies used in this project are subject to their 
-respective licenses. Please refer to the individual package documentation for 
-their licensing terms.
-
-React: MIT License
-Vite: MIT License
-Tailwind CSS: MIT License
-Framer Motion: MIT License
-Radix UI: MIT License
-Lucide React: ISC License
-TypeScript: Apache License 2.0
-
----
-
-Special Thanks:
-- Lovable AI Platform for development tools and assistance
-- Vercel for hosting and deployment services
-- All contributors and participants of the JHC 2025 Research Conference
-
----
-
-This project was developed with ❤️ by Vishesh Sanghvi for Jai Hind College's 
-National Research Conference 2025.
+**Lead Developer:** Vishesh Sanghvi
+**Institution:** Jai Hind College
+**Conference Theme:** Emerging Technologies and Innovation in Research

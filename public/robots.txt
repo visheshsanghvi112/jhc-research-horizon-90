@@ -1,44 +1,15 @@
 
-# JHC 2025 National Research Conference - Robots.txt
-# Developed by Vishesh Sanghvi
-
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Slurp
-Allow: /
-Crawl-delay: 2
-
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: WhatsApp
-Allow: /
+# Robots.txt for JHC 2025 National Research Conference
+# Website developed by Vishesh Sanghvi for Jai Hind College
 
 User-agent: *
 Allow: /
-Crawl-delay: 5
 
-# Block AI training crawlers
-User-agent: ChatGPT-User
+# Block AI crawlers and scrapers
+User-agent: GPTBot
 Disallow: /
 
-User-agent: ChatGPT
+User-agent: ChatGPT-User
 Disallow: /
 
 User-agent: CCBot
@@ -50,164 +21,18 @@ Disallow: /
 User-agent: Claude-Web
 Disallow: /
 
-User-agent: GPTBot
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: ChatGPT
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
-
-User-agent: GPTBot
-Disallow: /
-
-User-agent: OpenAI-SearchBot
-Disallow: /
-
-User-agent: AI2Bot
-Disallow: /
-
-User-agent: ai2-bot
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-User-agent: YouBot
-Disallow: /
-
-User-agent: Bytespider
-Disallow: /
-
-User-agent: Meta-ExternalAgent
-Disallow: /
-
-User-agent: Meta-ExternalFetcher
-Disallow: /
-
-User-agent: ImagesiftBot
-Disallow: /
-
-User-agent: Omgilibot
-Disallow: /
-
-User-agent: Omgili
+User-agent: Google-Extended
 Disallow: /
 
 User-agent: FacebookBot
 Disallow: /
 
-User-agent: Diffbot
+User-agent: facebookexternalhit
 Disallow: /
 
-User-agent: Bytespider
-Disallow: /
-
-User-agent: ImagesiftBot
-Disallow: /
-
-User-agent: Webzio-Extended
-Disallow: /
-
-User-agent: Scrapy
-Disallow: /
-
-User-agent: Wget
-Disallow: /
-
-User-agent: curl
-Disallow: /
-
-User-agent: python-requests
-Disallow: /
-
-User-agent: Postman
-Disallow: /
-
-User-agent: HTTrack
-Disallow: /
-
-User-agent: Teleport
-Disallow: /
-
-User-agent: WebCopier
-Disallow: /
-
-User-agent: NetMechanic
-Disallow: /
-
-User-agent: EmailCollector
-Disallow: /
-
-User-agent: EmailSiphon
-Disallow: /
-
-User-agent: WebBandit
-Disallow: /
-
-User-agent: EmailWolf
-Disallow: /
-
-User-agent: ExtractorPro
-Disallow: /
-
-User-agent: CopyRightCheck
-Disallow: /
-
-User-agent: craigslist
-Disallow: /
-
-User-agent: LinkpadBot
-Disallow: /
-
-User-agent: silk
-Disallow: /
-
-User-agent: NPBot
-Disallow: /
-
-# Sitemaps
+# Important files
 Sitemap: https://jhc2025.vercel.app/sitemap.xml
+Host: https://jhc2025.vercel.app
 
-# Allow well-known paths
-Allow: /.well-known/
-
-# Security headers
-Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
-Disallow: /tmp/
-Disallow: /backup/
-Disallow: /logs/
-Disallow: /cache/
-Disallow: /config/
-Disallow: /database/
-Disallow: /includes/
-Disallow: /vendor/
-Disallow: /node_modules/
-Disallow: /*.sql$
-Disallow: /*.log$
-Disallow: /*.env$
-Disallow: /*.config$
-Disallow: /*.json$
-Disallow: /*.xml$
-Disallow: /*.txt$
-Disallow: /*.md$
-Disallow: /*.yml$
-Disallow: /*.yaml$
-
-# Allow important files
-Allow: /sitemap.xml
-Allow: /robots.txt
-Allow: /manifest.json
-Allow: /favicon.ico
+# Contact
+# For any queries: jhc.research@jaihindcollege.edu.in
