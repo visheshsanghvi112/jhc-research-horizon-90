@@ -1,388 +1,140 @@
-import { Calendar, MapPin, Award, Users, ChevronDown, BookOpen, BarChart3 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+
 import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import { ArrowRight, BarChart3, TrendingUp, Database, Brain } from 'lucide-react';
 import CountdownTimer from './CountdownTimer';
 
 const HeroSection = () => {
-  const scrollToResearch = () => {
-    const element = document.querySelector('#research-objectives');
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToNext = () => {
-    const element = document.querySelector('#about-research');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
     }
   };
 
   return (
-    <section id="home" className="hero-gradient min-h-screen flex items-center text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-black/20"></div>
-      
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, 30, 0],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, -30, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.2, 1]
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-accent/30 rounded-full"
-            style={{
-              left: `${20 + i * 15}%`,
-              top: `${30 + i * 10}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: 3 + i,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.5,
-            }}
-          />
-        ))}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-accent">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-32 h-32 bg-accent/20 rounded-full blur-2xl animate-bounce"></div>
+        <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-white/5 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-40 right-1/3 w-16 h-16 bg-accent/15 rounded-full blur-xl animate-bounce delay-500"></div>
       </div>
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <motion.div 
-          className="grid lg:grid-cols-2 gap-12 items-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <div className="space-y-8">
-            <motion.div 
-              className="flex items-center space-x-4 mb-6"
-              variants={itemVariants}
-            >
-              <motion.img 
-                src="/lovable-uploads/d2f7f0e5-4f0d-4bb2-aa0d-4878f59f8133.png" 
-                alt="Jai Hind College Logo - MSc Big Data Analytics Department" 
-                className="h-16 w-auto"
-                whileHover={{ scale: 1.05, rotate: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              />
-              <motion.img 
-                src="/lovable-uploads/b5dc686a-cb70-4b46-8f4f-01bc0708af76.png" 
-                alt="Jai Hind College 75th Anniversary Celebration Logo" 
-                className="h-16 w-auto"
-                whileHover={{ scale: 1.05, rotate: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              />
-            </motion.div>
-            
-            <motion.div variants={itemVariants}>
-              <motion.h1 
-                className="text-4xl md:text-6xl font-bold leading-tight mb-4"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                MSc Big Data Analytics
-                <motion.span 
-                  className="block text-3xl md:text-5xl text-accent bg-clip-text bg-gradient-to-r from-accent to-accent/80"
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                >
-                  Research Project 2025
-                </motion.span>
-              </motion.h1>
-              <motion.p 
-                className="text-xl md:text-2xl mb-6 text-white/90"
-                variants={itemVariants}
-              >
-                "Empowering Innovation through Data-Driven Insights and Predictive Analytics"
-              </motion.p>
-              <motion.p 
-                className="text-lg text-white/80 mb-4"
-                variants={itemVariants}
-              >
-                Research conducted by Vishesh Sanghvi, MSc Big Data Analytics Student
-              </motion.p>
-              <motion.p 
-                className="text-base text-white/70 mb-8"
-                variants={itemVariants}
-              >
-                Department of Big Data Analytics, Jai Hind College (Empowered Autonomous), Mumbai
-              </motion.p>
-            </motion.div>
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"></div>
 
-            <motion.div 
-              className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 mb-6"
-              variants={itemVariants}
-            >
-              <motion.div 
-                whileHover={{ scale: 1.03, y: -5 }} 
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Card className="bg-white/10 border-white/20 backdrop-blur-md hover:bg-white/20 transition-all duration-300 group relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <CardContent className="p-5 flex items-center space-x-4 relative z-10">
-                    <motion.div
-                      animate={{ rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                      <BookOpen className="h-10 w-10 text-accent group-hover:text-white transition-colors duration-300" />
-                    </motion.div>
-                    <div>
-                      <p className="font-bold text-lg">Research Duration</p>
-                      <p className="text-sm text-white/90 font-medium">June 2024 - May 2025</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-              
-              <motion.div 
-                whileHover={{ scale: 1.03, y: -5 }} 
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Card className="bg-white/10 border-white/20 backdrop-blur-md hover:bg-white/20 transition-all duration-300 group relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <CardContent className="p-5 flex items-center space-x-4 relative z-10">
-                    <motion.div
-                      animate={{ y: [0, -3, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                      <MapPin className="h-10 w-10 text-accent group-hover:text-white transition-colors duration-300" />
-                    </motion.div>
-                    <div>
-                      <p className="font-bold text-lg">Institution</p>
-                      <p className="text-sm text-white/90 font-medium">Jai Hind College, Mumbai</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </motion.div>
-
-            <motion.div variants={itemVariants}>
-              <CountdownTimer />
-            </motion.div>
-
-            <motion.div 
-              className="space-y-4 mb-8"
-              variants={itemVariants}
-            >
-              <motion.div 
-                className="flex items-start space-x-4 p-5 bg-white/10 rounded-xl backdrop-blur-md border border-white/20"
-                whileHover={{ 
-                  backgroundColor: "rgba(255, 255, 255, 0.18)",
-                  borderColor: "rgba(255, 255, 255, 0.3)"
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <motion.div
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <BarChart3 className="h-7 w-7 text-accent flex-shrink-0 mt-1" />
-                </motion.div>
-                <div>
-                  <p className="text-base font-semibold mb-1">
-                    Research Focus Areas
-                  </p>
-                  <p className="text-sm text-white/90">
-                    Predictive Analytics, Machine Learning, Statistical Modeling, and Data Visualization
-                  </p>
-                </div>
-              </motion.div>
-              <motion.div 
-                className="flex items-start space-x-4 p-5 bg-white/10 rounded-xl backdrop-blur-md border border-white/20"
-                whileHover={{ 
-                  backgroundColor: "rgba(255, 255, 255, 0.18)",
-                  borderColor: "rgba(255, 255, 255, 0.3)"
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <motion.div
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <Award className="h-7 w-7 text-accent flex-shrink-0 mt-1" />
-                </motion.div>
-                <div>
-                  <p className="text-base font-semibold mb-1">
-                    Academic Achievement
-                  </p>
-                  <p className="text-sm text-white/90">
-                    Advanced research project as part of MSc Big Data Analytics curriculum
-                  </p>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              variants={itemVariants}
-            >
-              <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button 
-                  size="lg" 
-                  className="bg-accent text-black hover:bg-accent/90 text-lg px-10 py-4 shadow-2xl hover:shadow-accent/25 transition-all duration-300 font-semibold relative overflow-hidden group"
-                  onClick={scrollToResearch}
-                >
-                  <span className="relative z-10">Explore Research</span>
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-r from-accent/20 to-transparent"
-                    initial={{ x: '-100%' }}
-                    whileHover={{ x: '100%' }}
-                    transition={{ duration: 0.6 }}
-                  />
-                </Button>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary text-lg px-10 py-4 backdrop-blur-sm font-semibold transition-all duration-300 relative overflow-hidden group"
-                  onClick={() => {
-                    const element = document.querySelector('#visualizations');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                >
-                  <span className="relative z-10">View Data Analysis</span>
-                  <motion.div 
-                    className="absolute inset-0 bg-white/10"
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileHover={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </Button>
-              </motion.div>
-            </motion.div>
-          </div>
-
-          <motion.div 
-            className="hidden lg:block relative"
-            variants={itemVariants}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center">
+          {/* Research Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center bg-white/15 backdrop-blur-md text-white px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-white/30 shadow-lg hover:bg-white/20 transition-all duration-300"
           >
-            <div className="relative overflow-hidden rounded-2xl group">
-              <motion.img 
-                src="/lovable-uploads/55c0f04d-04fc-434a-8d75-12316a82aab8.png" 
-                alt="Jai Hind College Campus - MSc Big Data Analytics Research Environment" 
-                className="rounded-2xl shadow-2xl w-full object-cover"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl"></div>
-              <motion.div 
-                className="absolute bottom-6 left-6 right-6 text-white"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 0.8 }}
-              >
-                <motion.p 
-                  className="text-lg font-bold mb-2"
-                  animate={{ y: [0, -2, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  Jai Hind College Research Environment
-                </motion.p>
-                <p className="text-sm opacity-90 font-medium">Where data science meets academic excellence</p>
-              </motion.div>
-              
-              <motion.div
-                className="absolute top-6 right-6 w-3 h-3 bg-accent rounded-full"
-                animate={{ 
-                  scale: [1, 1.5, 1],
-                  opacity: [0.5, 1, 0.5]
-                }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              />
-              <motion.div
-                className="absolute top-16 right-12 w-2 h-2 bg-white rounded-full"
-                animate={{ 
-                  scale: [1, 1.3, 1],
-                  opacity: [0.3, 0.8, 0.3]
-                }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              />
-              
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full"
-                whileHover={{ x: '200%' }}
-                transition={{ duration: 0.8 }}
-              />
+            <Database className="mr-2 h-4 w-4" />
+            MSc Big Data Analytics Research Project 2025
+          </motion.div>
+
+          {/* Main Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight"
+          >
+            Big Data Analytics
+            <br />
+            <span className="bg-gradient-to-r from-accent via-yellow-300 to-orange-400 bg-clip-text text-transparent">
+              Research Showcase
+            </span>
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed"
+          >
+            Comprehensive MSc research project exploring data-driven insights, predictive analytics, 
+            and advanced statistical methodologies at <strong>Jai Hind College</strong>
+          </motion.p>
+
+          {/* Research Highlights */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-wrap justify-center gap-4 mb-10"
+          >
+            <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 border border-white/20">
+              <BarChart3 className="mr-2 h-4 w-4" />
+              <span className="text-sm font-medium">Data Visualization</span>
+            </div>
+            <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 border border-white/20">
+              <TrendingUp className="mr-2 h-4 w-4" />
+              <span className="text-sm font-medium">Predictive Analytics</span>
+            </div>
+            <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 border border-white/20">
+              <Brain className="mr-2 h-4 w-4" />
+              <span className="text-sm font-medium">Machine Learning</span>
             </div>
           </motion.div>
-        </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+          >
+            <Button
+              size="lg"
+              className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              onClick={() => scrollToSection('about')}
+            >
+              Explore Research
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-3 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
+              onClick={() => scrollToSection('contact')}
+            >
+              Contact Researcher
+            </Button>
+          </motion.div>
+
+          {/* Student Attribution */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="text-white/80 text-sm"
+          >
+            <p className="mb-2">Research conducted by</p>
+            <p className="font-semibold text-lg">Vishesh Sanghvi</p>
+            <p className="text-white/70">MSc Big Data Analytics Student</p>
+            <p className="text-white/70">Jai Hind College (Empowered Autonomous)</p>
+          </motion.div>
+        </div>
       </div>
 
-      <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
-        onClick={scrollToNext}
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        whileHover={{ scale: 1.2 }}
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
-        <motion.div
-          className="p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
-          whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.2)" }}
-        >
-          <ChevronDown className="h-6 w-6 text-white/60 hover:text-white transition-colors" />
-        </motion.div>
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-bounce"></div>
+        </div>
       </motion.div>
     </section>
   );
