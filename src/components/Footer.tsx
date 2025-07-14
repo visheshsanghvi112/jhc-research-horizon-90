@@ -1,5 +1,6 @@
 
 import { Mail, MapPin, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,10 +29,10 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#home" className="text-white/80 hover:text-white transition-colors">Home</a></li>
-              <li><a href="#about-conference" className="text-white/80 hover:text-white transition-colors">About Conference</a></li>
-              <li><a href="#registration" className="text-white/80 hover:text-white transition-colors">Registration</a></li>
-              <li><a href="#contact" className="text-white/80 hover:text-white transition-colors">Contact</a></li>
+              <li><Link to="/" className="text-white/80 hover:text-white transition-colors">Home</Link></li>
+              <li><Link to="/about" className="text-white/80 hover:text-white transition-colors">About Conference</Link></li>
+              <li><Link to="/register" className="text-white/80 hover:text-white transition-colors">Registration</Link></li>
+              <li><Link to="/contact" className="text-white/80 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
