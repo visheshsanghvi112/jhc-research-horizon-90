@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { User, Crown, Award, Mail, MapPin } from 'lucide-react';
 import Header from '@/components/Header';
@@ -102,7 +103,10 @@ const TeamPage = () => {
               variants={itemVariants}
               className="mb-16"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold text-primary text-center mb-8 sm:mb-12">Leadership</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-primary text-center mb-4 sm:mb-8">Leadership</h2>
+              <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Our esteemed leadership team continues to guide JHC 2025 with the same vision and dedication
+              </p>
               <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
                 {leadership.map((leader, index) => (
                   <motion.div
@@ -144,7 +148,10 @@ const TeamPage = () => {
               variants={itemVariants}
               className="mb-16"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold text-primary text-center mb-8 sm:mb-12">Core Committee Members</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-primary text-center mb-4 sm:mb-8">Core Committee Members</h2>
+              <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+                The same dedicated core committee members from our successful 2024 conference continue for JHC 2025
+              </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
                 {coreCommittee.map((member, index) => (
                   <motion.div
@@ -173,20 +180,28 @@ const TeamPage = () => {
               variants={itemVariants}
               className="text-center"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-6 sm:mb-8">Our Team</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-4 sm:mb-6">JHC 2024 Organizing Team</h2>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                The successful organizing team from our 2024 conference. While the organizing team structure will evolve for 2025, 
+                our core leadership and committee members remain committed to delivering another exceptional conference experience.
+              </p>
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
                 <img 
                   src="/lovable-uploads/1d3f69d9-45ec-45a7-a1fd-2b2c47667a56.png" 
-                  alt="Organizing Team" 
+                  alt="JHC 2024 Organizing Team" 
                   className="rounded-xl shadow-2xl mx-auto max-w-5xl w-full"
                 />
               </motion.div>
-              <p className="mt-4 sm:mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-                The dedicated organizing team behind JHC 2025, working together to create an exceptional research conference experience
-              </p>
+              <div className="mt-6 bg-primary/5 rounded-lg p-4 max-w-3xl mx-auto">
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-medium text-primary">JHC 2024 Conference Team:</span> This photo showcases our dedicated 2024 organizing team. 
+                  For JHC 2025, we maintain our proven leadership structure while preparing an enhanced organizing framework to deliver 
+                  an even more impactful conference experience.
+                </p>
+              </div>
             </motion.div>
           </motion.div>
         </div>

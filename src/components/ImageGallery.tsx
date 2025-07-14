@@ -1,4 +1,3 @@
-
 import { useState, useMemo, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -25,88 +24,88 @@ const ImageGallery = () => {
     {
       id: 'conf-1',
       url: '/lovable-uploads/138790b0-7483-4f48-ae16-2db2f83b5253.png',
-      title: 'Paper Presentation Sessions',
-      description: 'Outstanding research presentations from our annual conference',
+      title: 'JHC 2024: Paper Presentation Sessions',
+      description: 'Outstanding research presentations from our JHC 2024 annual conference',
       year: '2024',
       category: 'Presentations'
     },
     {
       id: 'conf-2',
       url: '/lovable-uploads/1d3f69d9-45ec-45a7-a1fd-2b2c47667a56.png',
-      title: 'Organizing Team Excellence',
-      description: 'Dedicated faculty and staff ensuring conference success',
+      title: 'JHC 2024: Organizing Team Excellence',
+      description: 'Dedicated faculty and staff who ensured the success of JHC 2024 conference',
       year: '2024',
       category: 'Team'
     },
     {
       id: 'conf-3',
       url: '/lovable-uploads/49ef0f2c-2f2a-4f3a-bc3f-3dc7fcb42a61.png',
-      title: 'Academic Collaboration',
-      description: 'Industry experts and academicians sharing insights',
+      title: 'JHC 2024: Academic Collaboration',
+      description: 'Industry experts and academicians sharing insights at JHC 2024',
       year: '2024',
       category: 'Collaboration'
     },
     {
       id: 'conf-4',
       url: '/lovable-uploads/edc1f11d-5a12-4c2a-8218-835a615404bb.png',
-      title: 'Award Ceremony',
-      description: 'Recognition of outstanding research contributions and achievements',
+      title: 'JHC 2024: Award Ceremony',
+      description: 'Recognition of outstanding research contributions and achievements at JHC 2024',
       year: '2024',
       category: 'Awards'
     },
     {
       id: 'conf-5',
       url: '/lovable-uploads/d72d7669-0e47-4ed7-b343-dde3176af457.png',
-      title: 'Keynote Speaker Session',
-      description: 'Distinguished speaker addressing the conference audience',
+      title: 'JHC 2024: Keynote Speaker Session',
+      description: 'Distinguished speaker addressing the JHC 2024 conference audience',
       year: '2024',
       category: 'Keynotes'
     },
     {
       id: 'conf-6',
       url: '/lovable-uploads/09f8903b-c328-4b5f-af8d-b8a57dfabfa4.png',
-      title: 'Expert Panel Discussion',
-      description: 'Industry leaders sharing insights on cybersecurity excellence',
+      title: 'JHC 2024: Expert Panel Discussion',
+      description: 'Industry leaders sharing insights on cybersecurity excellence at JHC 2024',
       year: '2024',
       category: 'Panels'
     },
     {
       id: 'conf-7',
       url: '/lovable-uploads/6df9a9f8-b4c2-4954-82fb-6601b0e35fa8.png',
-      title: 'Research Recognition',
-      description: 'Honoring exceptional research contributions in AI and Big Data',
+      title: 'JHC 2024: Research Recognition',
+      description: 'Honoring exceptional research contributions in AI and Big Data at JHC 2024',
       year: '2024',
       category: 'Awards'
     },
     {
       id: 'conf-8',
       url: '/lovable-uploads/31a68a9a-0aef-416b-94e3-c61078770a9a.png',
-      title: 'Certificate Presentation',
-      description: 'Formal recognition ceremony for conference participants',
+      title: 'JHC 2024: Certificate Presentation',
+      description: 'Formal recognition ceremony for JHC 2024 conference participants',
       year: '2024',
       category: 'Ceremonies'
     },
     {
       id: 'conf-9',
       url: '/lovable-uploads/8968bc78-1a7b-4977-884e-52224231bf06.png',
-      title: 'Engaged Audience',
-      description: 'Enthusiastic participants actively engaging in conference sessions',
+      title: 'JHC 2024: Engaged Audience',
+      description: 'Enthusiastic participants actively engaging in JHC 2024 conference sessions',
       year: '2024',
       category: 'Audience'
     },
     {
       id: 'conf-10',
       url: '/lovable-uploads/d22c8a91-cdc0-4263-94f5-b720d6165c09.png',
-      title: 'Technical Workshop',
-      description: 'Hands-on technical sessions and practical demonstrations',
+      title: 'JHC 2024: Technical Workshop',
+      description: 'Hands-on technical sessions and practical demonstrations at JHC 2024',
       year: '2024',
       category: 'Workshops'
     },
     {
       id: 'conf-11',
       url: '/lovable-uploads/451331e6-b94a-4044-8596-085b205db32c.png',
-      title: 'Conference Team Photo',
-      description: 'Complete organizing committee and distinguished guests',
+      title: 'JHC 2024: Complete Conference Team',
+      description: 'Complete organizing committee and distinguished guests from JHC 2024',
       year: '2024',
       category: 'Team'
     }
@@ -190,7 +189,7 @@ const ImageGallery = () => {
           <div className="relative flex-1 max-w-md">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
             <Input
-              placeholder="Search images..."
+              placeholder="Search JHC 2024 conference images..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10"
@@ -216,7 +215,7 @@ const ImageGallery = () => {
         </div>
         
         <div className="text-sm text-muted-foreground">
-          Showing {filteredImages.length} of {conferenceImages.length} images
+          Showing {filteredImages.length} of {conferenceImages.length} images from JHC 2024 conference
         </div>
       </div>
 
