@@ -1,6 +1,5 @@
 
 import Header from '@/components/Header';
-import EventHighlight from '@/components/EventHighlight';
 import HeroSection from '@/components/HeroSection';
 import AboutConference from '@/components/AboutConference';
 import SpeakersSection from '@/components/SpeakersSection';
@@ -21,7 +20,6 @@ const Index = () => {
     <PageTransition>
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 relative">
         <Header />
-        <EventHighlight />
         <HeroSection />
         
         {/* Enhanced visual separators with subtle animations */}
