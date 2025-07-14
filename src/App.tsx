@@ -16,7 +16,15 @@ import GalleryPage from "./pages/GalleryPage";
 import NotFound from "./pages/NotFound";
 import FAQPage from "./pages/FAQPage";
 
-const queryClient = new QueryClient();
+// Create QueryClient instance outside of component to prevent recreation
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      retry: 1,
+    },
+  },
+});
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -28,28 +36,30 @@ function ScrollToTop() {
   return null;
 }
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/sponsors" element={<SponsorsPage />} />
-          <Route path="/team" element={<TeamPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/faq" element={<FAQPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/register" element={<RegistrationPage />} />
+            <Route path="/sponsors" element={<SponsorsPage />} />
+            <Route path="/team" element={<TeamPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/faq" element={<FAQPage />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
