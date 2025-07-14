@@ -141,6 +141,12 @@
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
+/* Vertical text for Event Highlights sidebar */
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
 /* Smooth scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
