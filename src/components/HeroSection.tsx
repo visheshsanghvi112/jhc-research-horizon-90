@@ -1,19 +1,20 @@
-import { Calendar, MapPin, Award, Users, ChevronDown, BookOpen, BarChart3 } from 'lucide-react';
+
+import { Calendar, MapPin, Award, Users, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 import CountdownTimer from './CountdownTimer';
 
 const HeroSection = () => {
-  const scrollToResearch = () => {
-    const element = document.querySelector('#research-objectives');
+  const scrollToRegistration = () => {
+    const element = document.querySelector('#registration');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const scrollToNext = () => {
-    const element = document.querySelector('#about-research');
+    const element = document.querySelector('#participation');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -45,6 +46,7 @@ const HeroSection = () => {
     <section id="home" className="hero-gradient min-h-screen flex items-center text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-black/20"></div>
       
+      {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"
@@ -73,6 +75,7 @@ const HeroSection = () => {
           }}
         />
         
+        {/* New floating particles */}
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
@@ -109,14 +112,14 @@ const HeroSection = () => {
             >
               <motion.img 
                 src="/lovable-uploads/d2f7f0e5-4f0d-4bb2-aa0d-4878f59f8133.png" 
-                alt="Jai Hind College Logo - MSc Big Data Analytics Department" 
+                alt="Jai Hind College Logo" 
                 className="h-16 w-auto"
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               />
               <motion.img 
                 src="/lovable-uploads/b5dc686a-cb70-4b46-8f4f-01bc0708af76.png" 
-                alt="Jai Hind College 75th Anniversary Celebration Logo" 
+                alt="75th Anniversary Logo" 
                 className="h-16 w-auto"
                 whileHover={{ scale: 1.05, rotate: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -130,36 +133,31 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                MSc Big Data Analytics
+                JHC 2025
                 <motion.span 
                   className="block text-3xl md:text-5xl text-accent bg-clip-text bg-gradient-to-r from-accent to-accent/80"
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  Research Project 2025
+                  National Research Conference
                 </motion.span>
               </motion.h1>
               <motion.p 
                 className="text-xl md:text-2xl mb-6 text-white/90"
                 variants={itemVariants}
               >
-                "Empowering Innovation through Data-Driven Insights and Predictive Analytics"
+                "Empowering Innovation through Generative AI, Data Science, and Analytics"
               </motion.p>
               <motion.p 
-                className="text-lg text-white/80 mb-4"
+                className="text-lg text-white/80 mb-8"
                 variants={itemVariants}
               >
-                Research conducted by Vishesh Sanghvi, MSc Big Data Analytics Student
-              </motion.p>
-              <motion.p 
-                className="text-base text-white/70 mb-8"
-                variants={itemVariants}
-              >
-                Department of Big Data Analytics, Jai Hind College (Empowered Autonomous), Mumbai
+                Presented by the Department of Big Data Analytics, Jai Hind College (Empowered Autonomous)
               </motion.p>
             </motion.div>
 
+            {/* Enhanced cards with better animations */}
             <motion.div 
               className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 mb-6"
               variants={itemVariants}
@@ -176,11 +174,11 @@ const HeroSection = () => {
                       animate={{ rotate: [0, 5, -5, 0] }}
                       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                     >
-                      <BookOpen className="h-10 w-10 text-accent group-hover:text-white transition-colors duration-300" />
+                      <Calendar className="h-10 w-10 text-accent group-hover:text-white transition-colors duration-300" />
                     </motion.div>
                     <div>
-                      <p className="font-bold text-lg">Research Duration</p>
-                      <p className="text-sm text-white/90 font-medium">June 2024 - May 2025</p>
+                      <p className="font-bold text-lg">Conference Dates</p>
+                      <p className="text-sm text-white/90 font-medium">21st-22nd November 2025</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -201,7 +199,7 @@ const HeroSection = () => {
                       <MapPin className="h-10 w-10 text-accent group-hover:text-white transition-colors duration-300" />
                     </motion.div>
                     <div>
-                      <p className="font-bold text-lg">Institution</p>
+                      <p className="font-bold text-lg">Venue</p>
                       <p className="text-sm text-white/90 font-medium">Jai Hind College, Mumbai</p>
                     </div>
                   </CardContent>
@@ -209,6 +207,7 @@ const HeroSection = () => {
               </motion.div>
             </motion.div>
 
+            {/* Add countdown timer */}
             <motion.div variants={itemVariants}>
               <CountdownTimer />
             </motion.div>
@@ -229,14 +228,14 @@ const HeroSection = () => {
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  <BarChart3 className="h-7 w-7 text-accent flex-shrink-0 mt-1" />
+                  <Award className="h-7 w-7 text-accent flex-shrink-0 mt-1" />
                 </motion.div>
                 <div>
                   <p className="text-base font-semibold mb-1">
-                    Research Focus Areas
+                    Publication Opportunity
                   </p>
                   <p className="text-sm text-white/90">
-                    Predictive Analytics, Machine Learning, Statistical Modeling, and Data Visualization
+                    Selected research papers will be published in UGC CARE or International Journals
                   </p>
                 </div>
               </motion.div>
@@ -252,19 +251,20 @@ const HeroSection = () => {
                   animate={{ rotate: [0, 10, -10, 0] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  <Award className="h-7 w-7 text-accent flex-shrink-0 mt-1" />
+                  <Users className="h-7 w-7 text-accent flex-shrink-0 mt-1" />
                 </motion.div>
                 <div>
                   <p className="text-base font-semibold mb-1">
-                    Academic Achievement
+                    Registration Status
                   </p>
                   <p className="text-sm text-white/90">
-                    Advanced research project as part of MSc Big Data Analytics curriculum
+                    Abstract Submission & Registration opening soon
                   </p>
                 </div>
               </motion.div>
             </motion.div>
 
+            {/* Enhanced CTA buttons */}
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center"
               variants={itemVariants}
@@ -276,9 +276,9 @@ const HeroSection = () => {
                 <Button 
                   size="lg" 
                   className="bg-accent text-black hover:bg-accent/90 text-lg px-10 py-4 shadow-2xl hover:shadow-accent/25 transition-all duration-300 font-semibold relative overflow-hidden group"
-                  onClick={scrollToResearch}
+                  onClick={scrollToRegistration}
                 >
-                  <span className="relative z-10">Explore Research</span>
+                  <span className="relative z-10">Register Now</span>
                   <motion.div 
                     className="absolute inset-0 bg-gradient-to-r from-accent/20 to-transparent"
                     initial={{ x: '-100%' }}
@@ -295,14 +295,9 @@ const HeroSection = () => {
                   size="lg" 
                   variant="outline" 
                   className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary text-lg px-10 py-4 backdrop-blur-sm font-semibold transition-all duration-300 relative overflow-hidden group"
-                  onClick={() => {
-                    const element = document.querySelector('#visualizations');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
+                  onClick={scrollToRegistration}
                 >
-                  <span className="relative z-10">View Data Analysis</span>
+                  <span className="relative z-10">Submit Abstract</span>
                   <motion.div 
                     className="absolute inset-0 bg-white/10"
                     initial={{ scale: 0, opacity: 0 }}
@@ -314,6 +309,7 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
+          {/* Enhanced right column with better image effects */}
           <motion.div 
             className="hidden lg:block relative"
             variants={itemVariants}
@@ -321,7 +317,7 @@ const HeroSection = () => {
             <div className="relative overflow-hidden rounded-2xl group">
               <motion.img 
                 src="/lovable-uploads/55c0f04d-04fc-434a-8d75-12316a82aab8.png" 
-                alt="Jai Hind College Campus - MSc Big Data Analytics Research Environment" 
+                alt="Conference Venue" 
                 className="rounded-2xl shadow-2xl w-full object-cover"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
@@ -338,11 +334,12 @@ const HeroSection = () => {
                   animate={{ y: [0, -2, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  Jai Hind College Research Environment
+                  Jai Hind College Campus
                 </motion.p>
-                <p className="text-sm opacity-90 font-medium">Where data science meets academic excellence</p>
+                <p className="text-sm opacity-90 font-medium">Where innovation meets excellence in research</p>
               </motion.div>
               
+              {/* Enhanced floating elements */}
               <motion.div
                 className="absolute top-6 right-6 w-3 h-3 bg-accent rounded-full"
                 animate={{ 
@@ -360,6 +357,7 @@ const HeroSection = () => {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               />
               
+              {/* Shimmer effect on hover */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full"
                 whileHover={{ x: '200%' }}
@@ -370,6 +368,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
+      {/* Enhanced scroll indicator */}
       <motion.div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
         onClick={scrollToNext}
