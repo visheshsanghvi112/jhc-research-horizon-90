@@ -238,7 +238,7 @@ const AwardsSection = () => {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl font-bold text-primary text-center mb-12">Previous Award Winners</h3>
-          <div className="grid lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid lg:grid-cols-3 gap-6">
             {previousWinners.map((winner, index) => (
               <Card key={index} className="bg-white hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-6">
@@ -253,29 +253,6 @@ const AwardsSection = () => {
               </Card>
             ))}
           </div>
-        </motion.div>
-
-        {/* Call to Action */}
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Card className="max-w-2xl mx-auto bg-gradient-to-r from-primary/10 to-accent/10 border-primary/20">
-            <CardContent className="p-8">
-              <Trophy className="h-12 w-12 text-accent mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-primary mb-4">Compete for Excellence</h3>
-              <p className="text-muted-foreground mb-6">
-                Submit your best research and compete with peers for these prestigious awards. 
-                All submitted papers are automatically considered for relevant award categories.
-              </p>
-              <div className="text-lg font-semibold text-primary">
-                Total Prize Money: ₹1,00,000+
-              </div>
-            </CardContent>
-          </Card>
         </motion.div>
       </div>
     </section>

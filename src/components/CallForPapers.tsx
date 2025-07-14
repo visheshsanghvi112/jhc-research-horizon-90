@@ -1,5 +1,6 @@
+
 import { motion } from 'framer-motion';
-import { FileText, Calendar, Award, Users, Download, CheckCircle } from 'lucide-react';
+import { FileText, Award, CheckCircle, Download } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -93,15 +94,6 @@ const CallForPapers = () => {
       requirements: ["Address reviewer feedback", "Final formatting compliance", "Complete registration payment"],
       deadline: "25th October 2025"
     }
-  ];
-
-  const importantDates = [
-    { event: "Abstract Submission Opens", date: "15th August 2025", status: "upcoming" },
-    { event: "Abstract Acceptance", date: "25th August 2025", status: "upcoming" },
-    { event: "Full Paper Submission", date: "25th September 2025", status: "upcoming" },
-    { event: "Acceptance & Feedback", date: "12th October 2025", status: "upcoming" },
-    { event: "Revised Paper & Registration Deadline", date: "25th October 2025", status: "upcoming" },
-    { event: "Conference Dates", date: "21st-22nd November 2025", status: "upcoming" }
   ];
 
   return (
@@ -200,38 +192,7 @@ const CallForPapers = () => {
           </div>
         </div>
 
-        {/* Important Dates */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-primary text-center mb-12">Important Dates</h3>
-          <Card className="max-w-4xl mx-auto">
-            <CardContent className="p-8">
-              <div className="space-y-4">
-                {importantDates.map((date, index) => (
-                  <motion.div
-                    key={index}
-                    className={`flex items-center justify-between p-4 rounded-lg ${
-                      date.status === 'active' ? 'bg-accent/10 border border-accent/20' : 'bg-gray-50'
-                    }`}
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="flex items-center space-x-3">
-                      <Calendar className={`h-5 w-5 ${date.status === 'active' ? 'text-accent' : 'text-muted-foreground'}`} />
-                      <span className={`font-medium ${date.status === 'active' ? 'text-accent' : 'text-primary'}`}>
-                        {date.event}
-                      </span>
-                    </div>
-                    <span className="text-muted-foreground font-medium">{date.date}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        
+        {/* Submission Guidelines */}
         <motion.div
           className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl p-8 mb-12"
           initial={{ opacity: 0 }}
@@ -274,6 +235,7 @@ const CallForPapers = () => {
           </div>
         </motion.div>
 
+        {/* Publication Opportunities */}
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
