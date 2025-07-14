@@ -16,12 +16,6 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-User-agent: BaiduSpider
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
 # Block AI content scrapers while allowing academic indexing
 User-agent: GPTBot
 Disallow: /
@@ -41,15 +35,11 @@ Disallow: /
 User-agent: Google-Extended
 Disallow: /
 
-# Social media crawlers (allow for academic sharing)
+User-agent: FacebookBot
+Disallow: /
+
 User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
+Disallow: /
 
 # Important files
 Sitemap: https://jhc2025.vercel.app/sitemap.xml
@@ -61,7 +51,3 @@ Host: https://jhc2025.vercel.app
 # Institution: Jai Hind College, Mumbai
 # Department: Big Data Analytics
 # Contact: vishesh.research@jaihindcollege.edu.in
-
-# SEO Keywords: MSc Big Data Analytics, Jai Hind College, Big Data Research Project, 
-# Academic Data Science, Student Research Showcase, Data Visualization, 
-# Predictive Analytics, Research Conference 2025, Data-Driven Insights
