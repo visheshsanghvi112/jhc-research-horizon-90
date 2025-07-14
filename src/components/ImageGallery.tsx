@@ -269,15 +269,15 @@ const ImageGallery = () => {
         </div>
       )}
 
-      {/* Enhanced Modal */}
+      {/* Enhanced Modal with Better Image Viewing */}
       {selectedImage && (
         <div className="fixed inset-0 bg-black/95 flex items-center justify-center z-50 p-2 md:p-4 animate-fade-in">
-          <div className="relative max-w-7xl max-h-[95vh] w-full flex flex-col">
+          <div className="relative w-full h-full max-w-7xl flex flex-col">
             {/* Close button */}
             <Button
               variant="ghost"
               size="icon"
-              className="absolute -top-12 right-0 text-white hover:bg-white/20 z-10"
+              className="absolute top-2 right-2 md:top-4 md:right-4 text-white hover:bg-white/20 z-20"
               onClick={closeModal}
             >
               <X className="h-6 w-6" />
@@ -287,7 +287,7 @@ const ImageGallery = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 z-10"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 z-20"
               onClick={() => navigateImage('prev')}
             >
               <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
@@ -296,38 +296,44 @@ const ImageGallery = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 z-10"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 z-20"
               onClick={() => navigateImage('next')}
             >
               <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
             </Button>
 
-            {/* Image and details container */}
-            <div className="bg-white rounded-lg overflow-hidden flex flex-col max-h-full animate-scale-in">
-              <div className="flex-1 flex items-center justify-center bg-gray-100 min-h-0">
-                <img
-                  src={selectedImage.url}
-                  alt={selectedImage.title}
-                  className="max-w-full max-h-full object-contain"
-                />
+            {/* Main content container */}
+            <div className="flex flex-col h-full">
+              {/* Image container - takes most of the space */}
+              <div className="flex-1 flex items-center justify-center p-4 pb-2 min-h-0">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <img
+                    src={selectedImage.url}
+                    alt={selectedImage.title}
+                    className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                    style={{ maxHeight: 'calc(100vh - 200px)' }}
+                  />
+                </div>
               </div>
-              <div className="p-4 md:p-6 bg-white">
+              
+              {/* Details section - compact at bottom */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-lg mx-4 mb-4 p-4 md:p-6 shadow-xl">
                 <div className="flex items-start justify-between mb-2">
-                  <h2 className="text-xl md:text-2xl font-bold flex-1">{selectedImage.title}</h2>
-                  <span className="inline-block px-3 py-1 bg-accent/10 text-accent-foreground text-sm rounded-full ml-4">
+                  <h2 className="text-lg md:text-xl font-bold flex-1 text-gray-900">{selectedImage.title}</h2>
+                  <span className="inline-block px-3 py-1 bg-accent/20 text-accent-foreground text-sm rounded-full ml-4 shrink-0">
                     {selectedImage.category}
                   </span>
                 </div>
-                <p className="text-muted-foreground mb-4 text-sm md:text-base">{selectedImage.description}</p>
+                <p className="text-gray-700 mb-3 text-sm md:text-base leading-relaxed">{selectedImage.description}</p>
                 <div className="flex items-center justify-between">
-                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
+                  <span className="inline-block px-3 py-1 bg-primary/20 text-primary text-sm rounded-full font-medium">
                     {selectedImage.year}
                   </span>
-                  <span className="text-xs text-muted-foreground">
+                  <span className="text-xs text-gray-500">
                     {filteredImages.findIndex(img => img.id === selectedImage.id) + 1} of {filteredImages.length}
                   </span>
                 </div>
-                <div className="mt-4 text-xs text-muted-foreground">
+                <div className="mt-3 text-xs text-gray-500 text-center">
                   Use ← → arrow keys to navigate • Press ESC to close
                 </div>
               </div>
