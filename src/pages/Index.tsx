@@ -1,12 +1,9 @@
 
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
-import LiveDashboard from '@/components/LiveDashboard';
-import EnhancedCountdown from '@/components/EnhancedCountdown';
 import AboutConference from '@/components/AboutConference';
 import SpeakersSection from '@/components/SpeakersSection';
 import CallForPapers from '@/components/CallForPapers';
-import ResearchShowcase from '@/components/ResearchShowcase';
 import PastHighlights from '@/components/PastHighlights';
 import Participation from '@/components/Participation';
 import EnhancedRegistration from '@/components/EnhancedRegistration';
@@ -31,81 +28,60 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-50"></div>
         </div>
         
-        <LiveDashboard />
+        <AboutConference />
         
         <div className="relative overflow-hidden">
           <VisualSeparator variant="lines" />
           <div className="absolute inset-0 bg-gradient-to-l from-accent/5 to-primary/5 opacity-30"></div>
         </div>
         
-        <EnhancedCountdown />
+        <SpeakersSection />
         
         <div className="relative overflow-hidden">
           <VisualSeparator variant="dots" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/3 to-accent/3 opacity-40"></div>
         </div>
         
-        <AboutConference />
+        <CallForPapers />
         
         <div className="relative overflow-hidden">
           <VisualSeparator variant="wave" />
           <div className="absolute inset-0 bg-gradient-to-l from-accent/5 to-primary/5 opacity-50"></div>
-        </div>
-        
-        <SpeakersSection />
-        
-        <div className="relative overflow-hidden">
-          <VisualSeparator variant="lines" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-30"></div>
-        </div>
-        
-        <CallForPapers />
-        
-        <div className="relative overflow-hidden">
-          <VisualSeparator variant="dots" />
-          <div className="absolute inset-0 bg-gradient-to-l from-accent/3 to-primary/3 opacity-40"></div>
-        </div>
-        
-        <ResearchShowcase />
-        
-        <div className="relative overflow-hidden">
-          <VisualSeparator variant="wave" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-50"></div>
         </div>
         
         <PastHighlights />
         
         <div className="relative overflow-hidden">
           <VisualSeparator variant="lines" />
-          <div className="absolute inset-0 bg-gradient-to-l from-accent/5 to-primary/5 opacity-30"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-30"></div>
         </div>
         
         <Participation />
         
         <div className="relative overflow-hidden">
           <VisualSeparator variant="dots" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/3 to-accent/3 opacity-40"></div>
+          <div className="absolute inset-0 bg-gradient-to-l from-accent/3 to-primary/3 opacity-40"></div>
         </div>
         
         <EnhancedRegistration />
         
         <div className="relative overflow-hidden">
           <VisualSeparator variant="wave" />
-          <div className="absolute inset-0 bg-gradient-to-l from-accent/5 to-primary/5 opacity-50"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-50"></div>
         </div>
         
         <AwardsSection />
         
         <div className="relative overflow-hidden">
           <VisualSeparator variant="lines" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-30"></div>
+          <div className="absolute inset-0 bg-gradient-to-l from-accent/5 to-primary/5 opacity-30"></div>
         </div>
         
         <Guidelines />
         
         <div className="relative overflow-hidden">
           <VisualSeparator variant="dots" />
-          <div className="absolute inset-0 bg-gradient-to-l from-accent/3 to-primary/3 opacity-40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/3 to-accent/3 opacity-40"></div>
         </div>
         
         <InteractiveSchedule />
